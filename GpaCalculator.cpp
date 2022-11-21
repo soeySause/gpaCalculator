@@ -6,7 +6,7 @@ using namespace std;
 int main() {
   float qualityPoints = 0;
   float creditHours = 0;
-  cout << "Insert your GPA and credit hours for each class. Type -1 to finish. \n";
+  cout << "\nInsert your GPA and credit hours for each class. Type -1 to finish. \n";
 
   int i = 0;
   string classGPAString;
@@ -21,7 +21,7 @@ int main() {
       
       for(int o = 0; o < classGPAString.length(); o++)
       {
-        if((!isdigit(classGPAString.at(o))) && (classGPAString.at(o) == '.') && (classGPAString.at(o) == '-'))
+        if((!isdigit(classGPAString.at(o))) && (classGPAString.at(o) != '.') && (classGPAString.at(o) != '-'))
         {
           isInputValid = false;
         }else{
@@ -33,7 +33,7 @@ int main() {
       }
       if (!isInputValid)
       {
-          cout << "Thats not a valid input!\n";
+          cout << "That is not a valid input!\n";
           i--;
           continue;
       }
@@ -46,7 +46,7 @@ int main() {
 
       for(int o = 0; o < classCreditHoursString.length(); o++)
       {
-        if((!isdigit(classCreditHoursString.at(o))) && (classCreditHoursString.at(o) == '-'))
+        if((!isdigit(classCreditHoursString.at(o))) && (classCreditHoursString.at(o) != '-'))
         {
           isInputValid = false;
         }else{
